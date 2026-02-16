@@ -1,6 +1,11 @@
+import { createFileRoute } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 
-function App() {
+export const Route = createFileRoute("/")({
+  component: IndexComponent,
+});
+
+function IndexComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center">
       <div className="text-center space-y-6">
@@ -13,5 +18,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
