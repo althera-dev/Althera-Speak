@@ -1,0 +1,26 @@
+# Stage 1: Install dependencies
+FROM oven/bun:1 AS builder
+
+WORKDIR /app
+
+COPY backend/package.json backend/bun.lock* ./
+RUN bun install --frozen-lockfile
+
+COPY backend/ .
+RUN bun build src/index.ts --outdir ./dist --target bun
+
+# Stage 2: Production
+FROM oven/bun:1-slim AS production
+
+WORKDIR /app
+
+COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/drizzle ./drizzle
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/package.json ./
+
+ENV NODE_ENV=production
+
+EXPOSE 3000
+
+CMD ["bun", "run", "dist/index.js"]
