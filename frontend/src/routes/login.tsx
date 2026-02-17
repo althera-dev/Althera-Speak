@@ -56,7 +56,7 @@ function LoginPage() {
         {/* Animated gradient background */}
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
-            className="absolute -left-1/4 -top-1/4 h-[600px] w-[600px] rounded-full bg-gradient-to-br from-violet-600/30 to-indigo-600/30 blur-3xl"
+            className="absolute -left-1/4 -top-1/4 h-[600px] w-[600px] rounded-full bg-linear-to-br from-violet-600/30 to-indigo-600/30 blur-3xl"
             animate={{
               x: [0, 80, -40, 0],
               y: [0, -60, 40, 0],
@@ -65,7 +65,7 @@ function LoginPage() {
             transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
           />
           <motion.div
-            className="absolute -bottom-1/4 -right-1/4 h-[500px] w-[500px] rounded-full bg-gradient-to-br from-fuchsia-600/20 to-pink-600/20 blur-3xl"
+            className="absolute -bottom-1/4 -right-1/4 h-[500px] w-[500px] rounded-full bg-linear-to-br from-fuchsia-600/20 to-pink-600/20 blur-3xl"
             animate={{
               x: [0, -60, 80, 0],
               y: [0, 80, -40, 0],
@@ -74,7 +74,7 @@ function LoginPage() {
             transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
           />
           <motion.div
-            className="absolute left-1/3 top-1/3 h-[350px] w-[350px] rounded-full bg-gradient-to-br from-cyan-500/15 to-blue-500/15 blur-3xl"
+            className="absolute left-1/3 top-1/3 h-[350px] w-[350px] rounded-full bg-linear-to-br from-cyan-500/15 to-blue-500/15 blur-3xl"
             animate={{
               x: [0, 40, -60, 0],
               y: [0, -80, 20, 0],
@@ -131,7 +131,7 @@ function LoginPage() {
             transition={{ delay: 0.4, duration: 0.6 }}
           >
             Althera{" "}
-            <span className="bg-gradient-to-r from-violet-500 to-fuchsia-500 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-violet-500 to-fuchsia-500 bg-clip-text text-transparent">
               Speak
             </span>
           </motion.h1>
@@ -156,7 +156,7 @@ function LoginPage() {
             {[...Array(3)].map((_, i) => (
               <motion.div
                 key={i}
-                className="h-1 rounded-full bg-gradient-to-r from-violet-500/50 to-fuchsia-500/50"
+                className="h-1 rounded-full bg-linear-to-r from-violet-500/50 to-fuchsia-500/50"
                 initial={{ width: 0 }}
                 animate={{ width: i === 1 ? 48 : 24 }}
                 transition={{ delay: 1 + i * 0.1, duration: 0.5 }}
@@ -183,7 +183,7 @@ function LoginPage() {
           >
             <h1 className="text-3xl font-bold tracking-tight">
               Althera{" "}
-              <span className="bg-gradient-to-r from-violet-500 to-fuchsia-500 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-violet-500 to-fuchsia-500 bg-clip-text text-transparent">
                 Speak
               </span>
             </h1>
@@ -293,7 +293,7 @@ function LoginPage() {
                 >
                   <Button
                     type="submit"
-                    className="group relative h-11 w-full overflow-hidden bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white transition-all duration-300 hover:from-violet-700 hover:to-fuchsia-700 hover:shadow-lg hover:shadow-violet-500/25"
+                    className="group relative h-11 w-full overflow-hidden bg-linear-to-r from-violet-600 to-fuchsia-600 text-white transition-all duration-300 hover:from-violet-700 hover:to-fuchsia-700 hover:shadow-lg hover:shadow-violet-500/25"
                     disabled={isLoading}
                   >
                     <AnimatePresence mode="wait">
@@ -324,7 +324,7 @@ function LoginPage() {
 
                     {/* Shine effect */}
                     <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                      className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent"
                       initial={{ x: "-100%" }}
                       whileHover={{ x: "100%" }}
                       transition={{ duration: 0.6 }}
@@ -358,9 +358,9 @@ function LoginPage() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.5 }}
           >
-            <div className="h-px w-12 bg-gradient-to-r from-transparent to-border" />
+            <div className="h-px w-12 bg-linear-to-r from-transparent to-border" />
             <span>Secure authentication</span>
-            <div className="h-px w-12 bg-gradient-to-l from-transparent to-border" />
+            <div className="h-px w-12 bg-linear-to-l from-transparent to-border" />
           </motion.div>
         </motion.div>
       </div>
